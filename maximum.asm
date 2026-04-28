@@ -71,6 +71,11 @@ compareSecondThird:
     move $a0, $t0
     li $v0, 1
     syscall
+
+    la $a0, newline
+    li $v0, 4
+    syscall
+    
 exit:
         # TODO: Write code to properly exit a SPIM simulation
     li $v0, 10
