@@ -207,7 +207,6 @@ doSwap:
         addu $t3, $t2, $t3
 
         sll $t4, $t1, 2
-        addu $t3, $t2, $t3
         addu $t4, $t2, $t4
 
         lw $t5, 0($t3)
