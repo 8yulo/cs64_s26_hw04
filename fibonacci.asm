@@ -94,7 +94,7 @@ whileLoop:
     syscall
 
     addi $t3, $t3, 1
-    j loop
+    j whileLoop
 
 exit:
 # print newline
