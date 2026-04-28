@@ -198,10 +198,10 @@ doSwap:
         la $t2, myArray
         li $t0, 0
         li $t1, 1
-        li $t2, 11
+        li $t7, 11
 
     swap: 
-        bge $t0, $t2, finished
+        bge $t0, $t7, finished
 
         sll $t3, $t0, 2
         sll $t2, $t0, 2
