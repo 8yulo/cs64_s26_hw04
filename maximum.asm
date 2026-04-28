@@ -17,10 +17,6 @@
 main:
 # TODO: Write your code here!
 # Creates prompt -> user assigns first integer ($t0)
-    la $a0, prompt
-    li $v0, 4
-    syscall
-
     li $v0, 5
     syscall
     move $t0, $v0
@@ -33,11 +29,7 @@ main:
     addi $t0, $t0, 1
 
 # Creates prompt -> user assigns second integer ($t1)
-    isPositive_FirstInteger: 
-    la $a0, prompt
-    li $v0, 4
-    syscall
-
+isPositive_FirstInteger: 
     li $v0, 5
     syscall
     move $t1, $v0
@@ -49,20 +41,18 @@ main:
     addi $t1, $t1, 1
 
 # Creates prompt -> user assigns third integer ($t2)
-    isPositive_SecondInteger:
-    la $a0, prompt
-    li $v0, 4
-    syscall
+isPositive_SecondInteger:
     li $v0, 5
     syscall
     move $t2, $v0
     srl $t4, $t2, 31
     beq $t4, $zero, isPositive_ThirdInteger
+
     nor $t2, $t2, $zero
     addi $t2, $t2, 1
 
     # Checks if $t2 is positive -> converts using two's complement
-    isPositive_ThirdInteger:
+isPositive_ThirdInteger:
     slt $t3, $t0, $t1
     beq $t3, $zero, compareFirstSecond
     move $t0, $t1
@@ -73,7 +63,7 @@ main:
     beq $t3, $zero, compareSecondThird
     move $t0, $t2
 
-    compareSecondThird:
+compareSecondThird:
     la $a0, maxStr
     li $v0, 4
     syscall
