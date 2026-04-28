@@ -204,7 +204,9 @@ doSwap:
         bge $t0, $t7, finished
 
         sll $t3, $t0, 2
-        sll $t2, $t0, 2
+        addu $t3, $t2, $t3
+
+        sll $t4, $t1, 2
         addu $t3, $t2, $t3
         addu $t4, $t2, $t4
 
